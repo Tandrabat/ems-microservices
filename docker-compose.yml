@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: ems-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  service-registry:
+    build: ./service-registry
+    ports:
+      - "8761:8761"
+    depends_on:
+      - mysql
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+      - service-registry
+
+  employee-service:
+    build: ./employee-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+      - service-registry
+
+  department-service:
+    build: ./department-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+      - service-registry
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - service-registry
+
+volumes:
+  mysql_data:
