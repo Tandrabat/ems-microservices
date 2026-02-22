@@ -4,14 +4,17 @@ server:
 spring:
   application:
     name: auth-service
-   datasource:
+
+  datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:3306/ems
     username: ${DB_USER:root}
     password: ${DB_PASS:root}
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
   security:
     user:
       name: disabled
@@ -20,4 +23,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:service-registry}:8761/eureka
+      defaultZone: http://${EUREKA_HOST:service-registry}:8761/eureka/
