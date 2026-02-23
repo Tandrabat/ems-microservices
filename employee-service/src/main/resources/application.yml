@@ -5,10 +5,10 @@ spring:
   application:
     name: employee-service
 
-  datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:3306/ems
-    username: ${DB_USER:root}
-    password: ${DB_PASS:root}
+datasource:
+    url: jdbc:mysql://localhost:3307/ems
+    username: root
+    password: root
 
   jpa:
     hibernate:
