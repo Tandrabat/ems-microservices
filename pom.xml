@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 🔥 Spring Boot Parent -->
+    <!-- Spring Boot Parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -19,15 +19,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>ems-microservices</name>
-
-    <!-- 🔥 Common Properties -->
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.5</spring-cloud.version>
     </properties>
 
-    <!-- 🔥 Spring Cloud BOM -->
+    <!-- Spring Cloud BOM -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -40,7 +37,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <!-- 🔥 Modules -->
     <modules>
         <module>service-registry</module>
         <module>api-gateway</module>
