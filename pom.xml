@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.microservices</groupId>
+    <artifactId>ems-microservices</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>ems-microservices</name>
+
+    <modules>
+        <module>service-registry</module>
+        <module>api-gateway</module>
+        <module>employee-service</module>
+        <module>department-service</module>
+        <module>auth-service</module>
+    </modules>
+
+</project>
